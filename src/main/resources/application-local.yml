@@ -1,0 +1,19 @@
+db:
+  name: sigma_db
+  host: localhost
+  port: 3307
+  use-ssl: true
+  require-ssl: false
+  server-timezone: UTC
+  user: sigma_admin
+  pwd: sigma_password
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+jwt:
+  secret:
+    myjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuh

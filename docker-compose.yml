@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  sigma:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: sigma
+    environment:
+      JAVA_OPTS: -Dspring.profiles.active=local #-Ddb.host= mysqlserver -Ddb.port=3306
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysqlserver
+
+  mysqlserver:
+    image: mysql:8.0.31
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_USER=sigma_admin
+      - MYSQL_PASSWORD=sigma_password
+      - MYSQL_DATABASE=sigma_db
+      - MYSQL_ROOT_PASSWORD=root

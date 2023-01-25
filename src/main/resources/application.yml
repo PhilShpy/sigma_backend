@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: ${main.datasource.url}
+    username: ${main.datasource.username}
+    password: ${main.datasource.password}
+
+
+db:
+  name: ${SIGMA_APP_DB_NAME}
+  host: ${SIGMA_APP_DB_HOST}
+  port: ${SIGMA_APP_DB_PORT}
+  use-ssl: true
+  require-ssl: false
+  server-timezone: UTC
+  user: ${SIGMA_APP_DB_USER}
+  pwd: ${SIGMA_APP_DB_PASSWORD}
+
+main:
+  datasource:
+    url: jdbc:mysql://${db.host}:${db.port}/${db.name}?useSSL=${db.use-ssl}&requireSSL=${db.require-ssl}&serverTimezone=${db.server-timezone}
+    username: ${db.user}
+    password: ${db.pwd}
+
+server:
+  port: 8081
+
+jwt:
+  secret:
+    myjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuhmyjwtsecretkeyhuh
